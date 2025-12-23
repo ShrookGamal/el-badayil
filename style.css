@@ -6,6 +6,11 @@
     --light-gray: #f4f4f4;
     --transition: all 0.4s ease;
 }
+html, body { 
+    max-width: 100%; 
+    overflow-x: hidden; 
+    position: relative;
+}
 
 * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Cairo', sans-serif; scroll-behavior: smooth; }
 body { background: var(--light-gray); overflow-x: hidden; color: var(--dark-blue); }
@@ -766,4 +771,75 @@ h2 { font-size: 3rem; margin-bottom: 50px; text-align: center; font-weight: 900;
     .works-header h1 {
         font-size: 2.5rem;
     }
+}
+/* --- 1. حل جذري لمشكلة الموبايل وتحرك الشاشة --- */
+html, body { 
+    max-width: 100%; 
+    overflow-x: hidden; 
+    position: relative;
+}
+
+/* --- 2. ستايل السايد منيو (Sidebar) والغطاء --- */
+.sidebar {
+    position: fixed; top: 0; right: -100%; width: 280px; height: 100vh;
+    background: rgba(0, 18, 25, 0.98); backdrop-filter: blur(20px);
+    z-index: 3000; padding: 100px 30px; display: flex; flex-direction: column; gap: 20px;
+    transition: 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55); box-shadow: -10px 0 30px rgba(0,0,0,0.3);
+}
+.sidebar.active { right: 0; }
+.sidebar a { color: white; text-decoration: none; font-size: 1.3rem; font-weight: 700; padding: 15px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+.sidebar a:hover { color: var(--primary); padding-right: 25px; }
+
+.overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 2500; display: none; backdrop-filter: blur(5px); }
+.overlay.active { display: block; }
+
+.menu-toggle { display: none; cursor: pointer; font-size: 24px; color: var(--dark-blue); }
+
+/* --- 3. ستايل "من نحن" المطور (تكبير وحذف البادج) --- */
+.styled-about-title {
+    font-size: 5rem; /* تكبير جداً */
+    color: var(--primary);
+    font-weight: 900;
+    margin-bottom: 10px;
+    text-shadow: 0 0 20px rgba(0, 188, 212, 0.4);
+    display: block;
+}
+.main-img-large { 
+    width: 100%; max-width: 600px; border-radius: 40px; 
+    box-shadow: 0 30px 60px rgba(0,0,0,0.5); animation: float 6s infinite ease-in-out; 
+}
+
+/* --- 4. ستايل "نحن جاهزون" المتوهج --- */
+.special-contact-sub {
+    font-size: 1.6rem; color: var(--primary); font-weight: 800;
+    text-align: center; display: block; margin-bottom: 30px;
+    text-shadow: 0 0 15px var(--primary-glow);
+}
+
+/* --- 5. ستايل زخرفة الفوتر --- */
+.footer-column h4 {
+    color: var(--primary); font-size: 1.5rem; margin-bottom: 30px;
+    display: inline-block; position: relative; padding-bottom: 10px;
+}
+.footer-column h4::after {
+    content: ''; position: absolute; bottom: 0; right: 0;
+    width: 60%; height: 3px; background: var(--primary);
+    border-radius: 5px; box-shadow: 0 0 10px var(--primary);
+}
+
+/* --- 6. خلفية هيدر صفحة الأعمال --- */
+.works-header-img {
+    background: linear-gradient(rgba(0,18,25,0.7), rgba(0,18,25,0.7)), 
+                url("images/WhatsApp Image 2025-12-22 at 6.43.26 PM (1).jpeg");
+    background-size: cover; background-position: center;
+    padding: 180px 10% 100px; text-align: center; color: white;
+}
+
+/* --- Responsive Fix --- */
+@media (max-width: 768px) {
+    .nav-links { display: none; }
+    .menu-toggle { display: block; }
+    .styled-about-title { font-size: 3rem; text-align: center; }
+    .hero-content h1 { font-size: 2.2rem; }
+    .footer-column h4::after { left: 50%; transform: translateX(-50%); right: auto; }
 }

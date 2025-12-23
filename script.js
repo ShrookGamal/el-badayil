@@ -135,3 +135,19 @@ document.querySelectorAll('.expand-btn').forEach(button => {
         }
     });
 });
+// --- التحكم في السايد منيو للموبايل ---
+const menuBtn = document.getElementById('menu-open');
+const sidebar = document.getElementById('sidebar');
+const overlay = document.getElementById('overlay');
+const sideLinks = document.querySelectorAll('.sidebar a');
+
+function toggleMenu() {
+    sidebar.classList.toggle('active');
+    overlay.classList.toggle('active');
+}
+
+if(menuBtn) {
+    menuBtn.addEventListener('click', toggleMenu);
+}
+overlay.addEventListener('click', toggleMenu);
+sideLinks.forEach(link => link.addEventListener('click', toggleMenu));
