@@ -151,3 +151,9 @@ if(menuBtn) {
 }
 overlay.addEventListener('click', toggleMenu);
 sideLinks.forEach(link => link.addEventListener('click', toggleMenu));
+function toggleMenu() {
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('overlay');
+    sidebar.classList.toggle('active');
+    overlay.classList.toggle('active');
+}
