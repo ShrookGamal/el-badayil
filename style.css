@@ -764,45 +764,36 @@ h2 { font-size: 3rem; margin-bottom: 50px; text-align: center; font-weight: 900;
     line-height: 1.6 !important;
     text-align: justify;
 }
-/* --- إصلاح سكشن من نحن للموبايل فقط --- */
 @media (max-width: 768px) {
-    /* 1. منع خروج السكشن عن عرض الشاشة */
     #about {
         padding: 60px 0 !important;
         overflow: hidden !important;
     }
-
-    /* 2. جعل العناصر تترتب تحت بعضها */
     .about-wrapper {
         flex-direction: column !important;
         gap: 40px !important;
         padding: 0 15px !important;
         text-align: center !important;
     }
-
-    /* 3. تصغير العنوان الرئيسي ليناسب الشاشة */
     .about-content h2 {
         font-size: 1.8rem !important;
         line-height: 1.4 !important;
         margin-bottom: 20px !important;
     }
 
-    /* 4. ضبط محاذاة وحجم الوصف */
     .description-text {
         font-size: 1rem !important;
         text-align: center !important;
         line-height: 1.7 !important;
         margin-bottom: 25px !important;
     }
-
-    /* 5. ضبط كروت المميزات (تكنولوجيا البناء / جودة معتمدة) */
     .feature-box {
-        flex-direction: column !important; /* الأيقونة فوق النص */
+        flex-direction: column !important; 
         align-items: center !important;
         padding: 20px !important;
         margin-bottom: 15px !important;
-        border-right: none !important; /* حذف الخط الجانبي */
-        border-bottom: 4px solid var(--primary) !important; /* وضعه في الأسفل */
+        border-right: none !important; 
+        border-bottom: 4px solid var(--primary) !important; 
     }
 
     .f-icon {
@@ -814,42 +805,44 @@ h2 { font-size: 3rem; margin-bottom: 50px; text-align: center; font-weight: 900;
         font-size: 1.2rem !important;
         margin-bottom: 5px !important;
     }
-
-    /* 6. ضبط منطقة الصورة (Visual) */
     .about-visual {
         width: 100% !important;
         display: flex !important;
         justify-content: center !important;
     }
-
     .image-stack {
         width: 100% !important;
-        max-width: 380px !important; /* تحديد أقصى عرض لعدم خروجها عن الشاشة */
+        max-width: 380px !important; 
         margin: 0 auto !important;
     }
-
     .main-img {
         width: 100% !important;
         border-radius: 20px !important;
     }
-
-    /* 7. تصغير بادج الخبرة (+10) عشان ميبقاش ضخم ومزعج */
     .experience-card {
-        padding: 10px 15px !important;
-        bottom: 10px !important;
-        right: 10px !important;
-        min-width: 100px !important;
+        position: absolute !important; 
+        bottom: 15px !important; 
+        right: 15px !important;  
+        width: auto !important;  
+        min-width: 100px !important; 
+        padding: 10px 15px !important; 
+        border-radius: 15px !important; 
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        z-index: 10 !important;
     }
 
     .exp-num {
-        font-size: 1.5rem !important;
+        font-size: 1.4rem !important; 
+        margin-bottom: 2px !important;
     }
 
     .exp-txt {
-        font-size: 0.7rem !important;
+        font-size: 0.7rem !important; 
+        white-space: nowrap !important; 
     }
-
-    /* 8. منع الهز الجانبي للشاشة بالكامل */
     html, body {
         max-width: 100% !important;
         overflow-x: hidden !important;
