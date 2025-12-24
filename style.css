@@ -15,7 +15,6 @@ html, body {
 * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Cairo', sans-serif; scroll-behavior: smooth; }
 body { background: var(--light-gray); overflow-x: hidden; color: var(--dark-blue); }
 
-/* --- Navigation --- */
 nav {
     position: fixed; top: 20px; left: 50%; transform: translateX(-50%);
     width: 90%; background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(10px);
@@ -27,19 +26,21 @@ nav {
 .nav-links { display: flex; list-style: none; gap: 10px; }
 .nav-links a { text-decoration: none; color: var(--dark-blue); font-weight: 600; padding: 8px 20px; border-radius: 25px; transition: var(--transition); }
 .nav-links a:hover, .nav-links a.active { background: var(--primary); color: white; }
-
-/* --- Global Sections --- */
 section { padding: 100px 10%; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; }
 h2 { font-size: 3rem; margin-bottom: 50px; text-align: center; font-weight: 900; }
-
-/* --- Hero --- */
 #home { background: linear-gradient(135deg, var(--dark-blue) 0%, var(--medium-blue) 100%); color: white; text-align: center; position: relative; overflow: hidden; }
-#canvas-bg { position: absolute; top:0; left:0; width:100%; height:100%; z-index:1; }
-.hero-content { position: relative; z-index: 2; }
+#canvas-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none; 
+    opacity: 0.6; 
+}.hero-content { position: relative; z-index: 2; }
 .hero-content h1 { font-size: 4rem; margin-bottom: 20px; }
 .hero-actions { display: flex; gap: 20px; justify-content: center; margin-top: 30px; }
-
-/* --- About Modern --- */
 .about-modern { background: linear-gradient(145deg, #001219 0%, #005f73 100%); color: white; padding: 120px 10%; overflow: hidden; }
 .about-wrapper { display: flex; align-items: center; gap: 60px; flex-wrap: wrap; }
 .about-content { flex: 1.2; min-width: 350px; }
@@ -50,15 +51,12 @@ h2 { font-size: 3rem; margin-bottom: 50px; text-align: center; font-weight: 900;
 .feature-box { display: flex; gap: 20px; background: rgba(255,255,255,0.05); padding: 20px; border-radius: 20px; border-right: 4px solid var(--primary); transition: 0.3s; }
 .feature-box:hover { background: rgba(255,255,255,0.1); transform: translateX(-10px); }
 .f-icon { font-size: 2rem; color: var(--primary); }
-
 .about-visual { flex: 1; display: flex; justify-content: center; position: relative; }
 .main-img { width: 100%; max-width: 450px; border-radius: 30px; box-shadow: 0 30px 60px rgba(0,0,0,0.5); animation: float 6s ease-in-out infinite; }
 .experience-card { position: absolute; bottom: -20px; left: -20px; background: var(--primary); padding: 25px; border-radius: 25px; text-align: center; animation: float 6s ease-in-out infinite reverse; }
 .exp-num { display: block; font-size: 2.5rem; font-weight: 900; }
 @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
 
-
-/* --- Vision & Mission - UPDATED HIGH VITALITY STYLE --- */
 .vision-modern-section {
     background: radial-gradient(circle at center, #001c26 0%, var(--dark-blue) 100%);
     color: var(--white);
@@ -66,13 +64,11 @@ h2 { font-size: 3rem; margin-bottom: 50px; text-align: center; font-weight: 900;
     position: relative;
     overflow: hidden;
 }
-
 .vision-modern-section h2 {
     color: var(--white);
     margin-bottom: 80px;
     text-shadow: 0 0 15px rgba(0, 188, 212, 0.3);
 }
-
 .vision-mission-grid {
     display: flex;
     gap: 50px;
@@ -80,7 +76,6 @@ h2 { font-size: 3rem; margin-bottom: 50px; text-align: center; font-weight: 900;
     flex-wrap: wrap;
     perspective: 1000px;
 }
-
 .vision-card-new {
     position: relative;
     width: 450px;
@@ -129,21 +124,18 @@ h2 { font-size: 3rem; margin-bottom: 50px; text-align: center; font-weight: 900;
     color: var(--primary);
     border: 2px solid var(--primary);
     box-shadow: 0 0 20px rgba(0, 188, 212, 0.2);
-    animation: morphing 6s infinite alternate ease-in-out; /* أنيميشن حيوي للأيقونة */
+    animation: morphing 6s infinite alternate ease-in-out; 
 }
-
 @keyframes morphing {
     0% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
     100% { border-radius: 50% 50% 20% 80% / 25% 80% 20% 75%; }
 }
-
 .vision-card-new:hover .icon-box {
     background: var(--primary);
     color: var(--white);
     transform: scale(1.1) rotate(15deg);
     box-shadow: 0 0 30px var(--primary);
 }
-
 .card-content h3 {
     font-size: 2rem;
     margin-bottom: 20px;
@@ -156,8 +148,6 @@ h2 { font-size: 3rem; margin-bottom: 50px; text-align: center; font-weight: 900;
     line-height: 1.9;
     color: #cbd5e0;
 }
-
-/* النيون الدوار المطور */
 .moving-border {
     position: absolute;
     width: 150%;
@@ -172,7 +162,6 @@ h2 { font-size: 3rem; margin-bottom: 50px; text-align: center; font-weight: 900;
     100% { transform: rotate(360deg); }
 }
 
-/* هالة ضوئية خلفية تنبض */
 .card-glow {
     position: absolute;
     width: 100%;
@@ -182,20 +171,13 @@ h2 { font-size: 3rem; margin-bottom: 50px; text-align: center; font-weight: 900;
     transition: 0.5s;
     z-index: 1;
 }
-
 .vision-card-new:hover .card-glow {
     opacity: 0.3;
     transform: scale(1.2);
 }
-
-/* --- Vision Mobile Fix --- */
 @media (max-width: 768px) {
     .vision-card-new { width: 100%; min-height: auto; }
 }
-
-
-/* --- Services --- */
-/* --- Updated Services Grid (8 Cards) --- */
 #services {
     background-color: #e8e5e5;
     padding: 100px 5%;
@@ -258,17 +240,14 @@ h2 { font-size: 3rem; margin-bottom: 50px; text-align: center; font-weight: 900;
     font-size: 1rem;
     line-height: 1.5;
 }
-
-/* الجزء المتوسع */
 .s-full-content {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.6s ease-in-out, opacity 0.4s ease;
     opacity: 0;
-    text-align: right; /* اتجاه عربي */
+    text-align: right; 
     padding: 0 10px;
 }
-
 .s-full-content p {
     padding-top: 20px;
     font-size: 0.95rem;
@@ -276,18 +255,14 @@ h2 { font-size: 3rem; margin-bottom: 50px; text-align: center; font-weight: 900;
     line-height: 1.8;
     border-top: 1px solid #eee;
 }
-
-/* الحالة المفتوحة للكارد */
 .service-expand-card.active {
     border-color: var(--primary);
     background: #fff;
 }
-
 .service-expand-card.active .s-full-content {
-    max-height: 400px; /* طول كافي للنص */
+    max-height: 400px; 
     opacity: 1;
 }
-
 .expand-btn {
     margin-top: 20px;
     background: transparent;
@@ -305,110 +280,23 @@ h2 { font-size: 3rem; margin-bottom: 50px; text-align: center; font-weight: 900;
     color: #fff;
 }
 
-/* للموبايل */
 @media (max-width: 768px) {
     .services-grid-8 {
         grid-template-columns: 1fr;
     }
 }
-/* --- Works Enhanced Style --- */
-.works-enhanced {
-    /* دمج الصورة مع الدجراديه باستخدام Overlay */
-    background-image: url("images/WhatsApp Image 2025-12-22 at 6.43.26 PM (1).jpeg");
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed; /* بيعمل تأثير بارالاكس خفيف ومميز */
-    padding: 100px 0;
-    position: relative;
-}
-
-.works-desc {
-    text-align: center;
-    color: #555;
-    margin-top: -30px;
-    margin-bottom: 50px;
-    font-size: 1.1rem;
-}
-
-.mySwiper {
-    width: 100%;
-    padding: 50px 0 !important;
-}
-
-.work-card {
-    position: relative;
-    width: 100%;
-    height: 400px;
-    border-radius: 20px;
-    overflow: hidden;
-    background: #fff;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-    transition: 0.4s;
-}
-
-.work-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: 0.5s;
-}
-
-.work-card:hover img {
-    transform: scale(1.1);
-}
-
-.work-info {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: 20px;
-    background: linear-gradient(transparent, rgba(0, 188, 212, 0.9));
-    color: white;
-    transform: translateY(100%);
-    transition: 0.4s;
-}
-
-.work-card:hover .work-info {
-    transform: translateY(0);
-}
-
-.work-info h5 {
-    font-size: 1.2rem;
-    font-weight: 700;
-}
-
-/* ستايل أزرار التنقل */
-.swiper-button-next, .swiper-button-prev {
-    color: var(--primary) !important;
-    background: white;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-.swiper-pagination-bullet-active {
-    background: var(--primary) !important;
-    width: 25px;
-    border-radius: 5px;
-}
-/* --- Contact Refined Style --- */
 .contact-refined-section {
     background: radial-gradient(circle at center, #062937 0%, #034967 100%);
     padding: 80px 0;
     color: white;
 }
-
 .contact-main-wrapper {
     display: flex;
     gap: 30px;
-    max-width: 1000px; /* تحديد عرض السكشن */
+    max-width: 1000px; 
     margin: 0 auto;
     flex-wrap: wrap;
 }
-
-/* روابط بيانات الاتصال */
 .contact-info-glass {
     flex: 1;
     min-width: 300px;
@@ -451,8 +339,6 @@ h2 { font-size: 3rem; margin-bottom: 50px; text-align: center; font-weight: 900;
 
 .info-text span { font-size: 0.8rem; color: var(--primary); font-weight: bold; }
 .info-text p { font-size: 1rem; margin-top: 2px; }
-
-/* فورم أصغر وأرقى */
 .contact-form-wrapper {
     flex: 1.4;
     min-width: 350px;
@@ -519,8 +405,6 @@ h2 { font-size: 3rem; margin-bottom: 50px; text-align: center; font-weight: 900;
 
 .input-group-small input:focus ~ .input-bar,
 .input-group-small textarea:focus ~ .input-bar { width: 100%; }
-
-/* زر إرسال راقي وصغير */
 .submit-btn-refined {
     background: var(--primary);
     border: none;
@@ -534,9 +418,8 @@ h2 { font-size: 3rem; margin-bottom: 50px; text-align: center; font-weight: 900;
     align-items: center;
     gap: 10px;
     transition: 0.3s;
-    margin-right: auto; /* دفع الزر لليسار */
+    margin-right: auto; 
 }
-
 .submit-btn-refined:hover {
     background: white;
     color: var(--primary);
@@ -553,18 +436,13 @@ h2 { font-size: 3rem; margin-bottom: 50px; text-align: center; font-weight: 900;
     .input-row { flex-direction: column; }
     .contact-main-wrapper { flex-direction: column-reverse; }
 }
-/* --- Buttons --- */
 .btn-main { background: var(--primary); color: white; padding: 15px 40px; border-radius: 10px; text-decoration: none; font-weight: bold; border: none; cursor: pointer; }
 .btn-alt { background: white; color: var(--primary); padding: 15px 40px; border-radius: 10px; text-decoration: none; font-weight: bold; }
-
-/* --- Floating Buttons --- */
 .floating-btns { position: fixed; bottom: 30px; right: 30px; display: flex; flex-direction: column; gap: 15px; z-index: 2000; }
 .f-btn { width: 60px; height: 60px; border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; font-size: 25px; text-decoration: none; box-shadow: 0 5px 15px rgba(0,0,0,0.3); transition: var(--transition); animation: pulse 2s infinite; }
 .btn-whatsapp { background: #25d366; }
 .btn-call { background: #007bff; }
 @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }
-
-/* --- Professional Footer Style --- */
 .main-footer {
     background: radial-gradient(circle at center, #001c26 0%, #000c11 100%);/* لون كحلي مطابق للصورة */
     color: #ffffff;
@@ -573,10 +451,9 @@ h2 { font-size: 3rem; margin-bottom: 50px; text-align: center; font-weight: 900;
     
     
 }
-
 .footer-container {
     display: grid;
-    grid-template-columns: 1fr 1fr 1.5fr; /* تقسيم الأعمدة */
+    grid-template-columns: 1fr 1fr 1.5fr; 
     gap: 50px;
     padding: 30px;
 }
@@ -587,8 +464,6 @@ h2 { font-size: 3rem; margin-bottom: 50px; text-align: center; font-weight: 900;
     margin-bottom: 30px;
     position: relative;
 }
-
-/* عمود عن الشركة */
 .footer-logo-text {
     font-weight: 900;
     color: var(--primary) !important;
@@ -608,11 +483,9 @@ h2 { font-size: 3rem; margin-bottom: 50px; text-align: center; font-weight: 900;
 }
 
 .footer-social-new .wa-icon:hover {
-    color: #25d366; /* لون الواتساب الأصلي */
+    color: #25d366; 
     transform: scale(1.1);
 }
-
-/* عمود الروابط */
 .footer-links-grid {
     list-style: none;
     display: grid;
@@ -631,8 +504,6 @@ h2 { font-size: 3rem; margin-bottom: 50px; text-align: center; font-weight: 900;
     color: var(--primary);
     padding-right: 5px;
 }
-
-/* عمود التواصل */
 .footer-contact-list {
     list-style: none;
 }
@@ -654,8 +525,6 @@ h2 { font-size: 3rem; margin-bottom: 50px; text-align: center; font-weight: 900;
     text-decoration: none;
     font-size: 0.95rem;
 }
-
-/* الجزء السفلي (الحقوق) */
 .footer-bottom {
     background-color: rgba(0, 0, 0, 0.2);
     padding: 30px 0;
@@ -676,7 +545,7 @@ h2 { font-size: 3rem; margin-bottom: 50px; text-align: center; font-weight: 900;
 }
 
 .developer-credit a {
-    color: #f39c12; /* لون برتقالي مميز للمبرمج كما في الصورة */
+    color: #f39c12; 
     text-decoration: none;
     font-weight: bold;
     text-transform: uppercase;
@@ -685,8 +554,6 @@ h2 { font-size: 3rem; margin-bottom: 50px; text-align: center; font-weight: 900;
 .developer-credit a:hover {
     text-decoration: underline;
 }
-
-/* استجابة الموبايل */
 @media (max-width: 992px) {
     .footer-container {
         grid-template-columns: 1fr;
@@ -708,7 +575,6 @@ h2 { font-size: 3rem; margin-bottom: 50px; text-align: center; font-weight: 900;
     .hero-content h1 { font-size: 2.5rem; }
     .about-wrapper { flex-direction: column-reverse; }
 }
-/* --- New Works Page Styles --- */
 .works-page {
     background-color: #f8f9fa;
 }
@@ -762,8 +628,6 @@ h2 { font-size: 3rem; margin-bottom: 50px; text-align: center; font-weight: 900;
 .work-item-card:hover img {
     transform: scale(1.1);
 }
-
-/* للموبايل */
 @media (max-width: 768px) {
     .gallery-grid {
         grid-template-columns: 1fr;
@@ -772,14 +636,6 @@ h2 { font-size: 3rem; margin-bottom: 50px; text-align: center; font-weight: 900;
         font-size: 2.5rem;
     }
 }
-/* --- 1. حل جذري لمشكلة الموبايل وتحرك الشاشة --- */
-html, body { 
-    max-width: 100%; 
-    overflow-x: hidden; 
-    position: relative;
-}
-
-/* --- 2. ستايل السايد منيو (Sidebar) والغطاء --- */
 .sidebar {
     position: fixed; top: 0; right: -100%; width: 280px; height: 100vh;
     background: rgba(0, 18, 25, 0.98); backdrop-filter: blur(20px);
@@ -789,15 +645,11 @@ html, body {
 .sidebar.active { right: 0; }
 .sidebar a { color: white; text-decoration: none; font-size: 1.3rem; font-weight: 700; padding: 15px; border-bottom: 1px solid rgba(255,255,255,0.1); }
 .sidebar a:hover { color: var(--primary); padding-right: 25px; }
-
 .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 2500; display: none; backdrop-filter: blur(5px); }
 .overlay.active { display: block; }
-
 .menu-toggle { display: none; cursor: pointer; font-size: 24px; color: var(--dark-blue); }
-
-/* --- 3. ستايل "من نحن" المطور (تكبير وحذف البادج) --- */
 .styled-about-title {
-    font-size: 5rem; /* تكبير جداً */
+    font-size: 5rem; 
     color: var(--primary);
     font-weight: 900;
     margin-bottom: 10px;
@@ -808,15 +660,12 @@ html, body {
     width: 100%; max-width: 600px; border-radius: 40px; 
     box-shadow: 0 30px 60px rgba(0,0,0,0.5); animation: float 6s infinite ease-in-out; 
 }
-
-/* --- 4. ستايل "نحن جاهزون" المتوهج --- */
 .special-contact-sub {
     font-size: 1.6rem; color: var(--primary); font-weight: 800;
     text-align: center; display: block; margin-bottom: 30px;
     text-shadow: 0 0 15px var(--primary-glow);
 }
 
-/* --- 5. ستايل زخرفة الفوتر --- */
 .footer-column h4 {
     color: var(--primary); font-size: 1.5rem; margin-bottom: 30px;
     display: inline-block; position: relative; padding-bottom: 10px;
@@ -826,18 +675,56 @@ html, body {
     width: 60%; height: 3px; background: var(--primary);
     border-radius: 5px; box-shadow: 0 0 10px var(--primary);
 }
-.works-header
-{
-    background-image: url("images/WhatsApp\ Image\ 2025-12-22\ at\ 6.43.26\ PM.jpeg");
-
+.works-header {
+    position: relative;
+    width: 100%;
+    height: 450px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    overflow: hidden; 
+    background-color: #001219; 
 }
-.works-header-img {
-    background: linear-gradient(rgba(168, 182, 188, 0.7), rgba(238, 245, 248, 0.7));
-                
-    background-size: cover; background-position: center;
-    padding: 180px 10% 100px; text-align: center; color: white;
+.works-header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(rgba(0, 18, 25, 0.7), rgba(7, 54, 73, 0.7)), 
+                      url("images/WhatsApp\ Image\ 2025-12-22\ at\ 6.43.26\ PM.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 0; 
+    animation: slowZoom 20s infinite alternate linear; 
+}
+.works-header .container {
+    position: relative;
+    z-index: 2;
+    animation: fadeInUp 1.2s ease-out;
+}
+@keyframes slowZoom {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.1); }
+}
+@keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+.works-header h1 {
+    font-size: 3.6rem;
+    font-weight: 900;
+    text-shadow: 0 4px 15px rgba(0,0,0,0.5);
 }
 
+@media (max-width: 768px) {
+    .works-header { height: 300px; }
+    .works-header h1 { font-size: 2.2rem; }
+}
 @media (max-width: 768px) {
     .nav-links { display: none; }
     .menu-toggle { display: block; }
@@ -850,7 +737,6 @@ html, body {
     text-align: right;
     border-top: 1px solid #f0f0f0;
 }
-
 .text-point {
     margin-bottom: 20px;
     padding-right: 15px;
@@ -878,4 +764,62 @@ html, body {
     font-size: 0.95rem !important;
     line-height: 1.6 !important;
     text-align: justify;
+}
+@media (max-width: 768px) {
+    .styled-about-title {
+        font-size: 2.5rem !important; 
+        text-align: center;
+        margin-top: 20px;
+    }
+    .about-content h2 {
+        font-size: 1.8rem !important;
+        text-align: center;
+        line-height: 1.4;
+    }
+    .about-content p {
+        text-align: center;
+        font-size: 1rem !important;
+        padding: 0 10px;
+        margin-bottom: 25px;
+    }
+    .about-wrapper {
+        flex-direction: column !important; 
+        gap: 30px !important;
+        padding: 0 15px;
+    }
+    .main-img-large {
+        max-width: 100% !important;
+        width: 100% !important;
+        border-radius: 20px !important;
+    }
+    .feature-box {
+        flex-direction: column !important; 
+        text-align: center !important;
+        padding: 20px !important;
+        margin-bottom: 15px !important;
+    }
+
+    .feature-box i {
+        margin: 0 0 10px 0 !important; 
+        font-size: 2.5rem !important;
+    }
+    .experience-card {
+        padding: 10px 15px !important;
+        bottom: 10px !important;
+        right: 10px !important;
+    }
+    
+    .exp-num {
+        font-size: 1.5rem !important;
+    }
+    .floating-btns {
+        bottom: 15px !important;
+        right: 15px !important;
+    }
+    
+    .f-btn {
+        width: 50px !important;
+        height: 50px !important;
+        font-size: 20px !important;
+    }
 }
