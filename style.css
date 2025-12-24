@@ -249,10 +249,10 @@ h2 { font-size: 3rem; margin-bottom: 50px; text-align: center; font-weight: 900;
     padding: 0 10px;
 }
 .s-full-content p {
-    padding-top: 20px;
+    padding-top: 0px;
     font-size: 0.95rem;
     color: #444;
-    line-height: 1.8;
+    line-height: 1.5;
     border-top: 1px solid #eee;
 }
 .service-expand-card.active {
